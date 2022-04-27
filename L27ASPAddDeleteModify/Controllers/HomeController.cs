@@ -15,26 +15,21 @@ namespace L27ASPAddDeleteModify.Controllers
             _logger = logger;
         }
 
-
-
-
-
         public IActionResult Index()
         {
 
-            using StuDBContext _db = new StuDBContext();
+            //using StuDBContext _db = new StuDBContext();
 
-            Student stu = new Student { id = "101", name = "Pickle", grade = 90 };
-            _db.Students.Add(stu);
+            //Student stu = new Student { id = "341", name = "Pickle", grade = 90 };
+            //_db.Students.Add(stu);
 
-            stu = new Student { id = "102", name = "Rick", grade = 95 };
-            _db.Students.Add(stu);
+            //stu = new Student { id = "432", name = "Rick", grade = 95 };
+            //_db.Students.Add(stu);
 
-            stu = new Student { id = "102", name = "Morty", grade = 87 };
-            _db.Students.Add(stu);
+            //stu = new Student { id = "4567", name = "Morty", grade = 87 };
+            //_db.Students.Add(stu);
 
-            _db.SaveChanges();
-
+            //_db.SaveChanges();
 
             return View();
         }
@@ -47,6 +42,13 @@ namespace L27ASPAddDeleteModify.Controllers
         [HttpPost]
         public IActionResult Add(Student stu)
         {
+
+            using StuDBContext _db = new StuDBContext();
+
+            _db.Students.Add(stu);
+
+            _db.SaveChanges();
+
             return View();
         }
 
@@ -56,7 +58,6 @@ namespace L27ASPAddDeleteModify.Controllers
             using StuDBContext db = new StuDBContext();
 
             Student[] stuArray = db.Students.ToArray<Student>();
-
 
             return View(stuArray);
         }
