@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-       @RenderSection("header",true)
+
+       @RenderSection("header",false)
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -19,7 +21,9 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        @RenderSection("footer",true)
+
+        @RenderSection("footer",false)
+    
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

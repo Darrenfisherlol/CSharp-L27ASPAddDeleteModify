@@ -1,17 +1,18 @@
 ﻿
 
-body
+Index
+
+    @section header{
+    <a href="@Url.Action("Index","Home")" class="btn btn-primary">Home</a>
+    <a href="@Url.Action("Add","Home")" class="btn btn-info">Add</a>
+    <a href="@Url.Action("Edit","Home")" class="btn btn-info">Edit</a>
+    <a href="@Url.Action("Delete","Home")" class="btn btn-danger">Delete</a>
+    <a href="@Url.Action("Show","Home")" class="btn btn-warning">Show</a>
+
+    }
 
 
+    @section footer{
 
-@RenderSection("header"){
-
-
-}
-
-
-@RenderSection("footer"){
-
-    Developed by Darren Fisher
-
-}
+        Developed by Darren Fisher MIS 3033
+    }

@@ -1,37 +1,25 @@
-﻿@model Student
+﻿@model Student[];
 
 
+<br/>
 
-<fieldset>
-
-    @using (Html.BeginForm("Add", "Home", FormMethod.Post))
-    {
+    @foreach(Student stu in Model){
         
-        @Html.LabelFor(x=>x.id)
-        @Html.TextBoxFor(x=>x.id)
-        <br />
-
-        @Html.LabelFor(x=>x.name)
-        @Html.TextBoxFor(x=>x.name)
-        <br />
-
-        @Html.LabelFor(x=>x.grade)
-        @Html.TextBoxFor(x=>x.grade)
-        <br />
-
-
-
-        <button type="submit"> Add Student</button>
-
-      }
+        <div class="alert alert-primary">
+            <span>
+                 ID: @stu.id
+            </span>
+            <span>
+                 Name: @stu.name
+            </span>
+            <span>
+                 Grade: @stu.grade.ToString("F2")
+            </span>
+        </div>
+       
+    }
 
 
-
-
-
-
-
-</fieldset>
 
 
 
